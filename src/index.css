@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply font-sans text-ink-primary bg-white antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2 {
+    @apply font-display font-medium tracking-tight text-navy-800;
+  }
+
+  h3, h4, h5, h6 {
+    @apply font-sans font-bold tracking-tight text-navy-800;
+  }
+
+  /* Editorial gold underline accent — used beneath section eyebrow labels */
+  .eyebrow {
+    @apply relative inline-block pl-4 text-xs font-semibold uppercase tracking-wider-luxe text-gold-700;
+  }
+  .eyebrow::before {
+    content: '';
+    @apply absolute left-0 top-1/2 h-px w-3 -translate-y-1/2 bg-gold-600;
+  }
+
+  /* Thin gold hairline divider used between major sections */
+  .divider-gold {
+    @apply h-px w-16 bg-gradient-to-r from-gold-600 to-transparent;
+  }
+
+  /* Visible keyboard focus throughout the app */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible,
+  [tabindex]:focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-gold-600;
+  }
+}
+
+@layer utilities {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  /*
+   * Google Maps "Embed a map" HTML often includes inline width="600"
+   * height="450" attributes on the <iframe>. Inline HTML attributes can
+   * beat Tailwind utility classes on some Android Chrome builds, so we
+   * force full responsive sizing here with !important.
+   */
+  .map-embed-wrap iframe {
+    width: 100% !important;
+    height: 320px !important;
+    border: 0 !important;
+    display: block;
+  }
+
+  /* Hide ugly default scrollbar on horizontal thumbnail strips (Android Chrome) */
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
