@@ -50,7 +50,7 @@ export function Navbar() {
       <nav className="container-page flex h-20 items-center justify-between" aria-label="Main navigation">
         <NavLink to="/" className="flex items-center gap-3 font-display text-lg font-medium text-navy-800">
           <img src="/logo.png" alt="HK Grow Infra" className="h-10 w-10 rounded-sm object-contain" />
-          <span className="hidden sm:inline">Grow Infra</span>
+          <span className="hidden sm:inline">HK  Grow Infra</span>
         </NavLink>
 
         {/* Desktop links */}

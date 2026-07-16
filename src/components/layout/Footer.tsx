@@ -50,7 +50,7 @@ export function Footer() {
         <div>
           <div className="mb-4 flex items-center gap-3">
             <img src="/logo.png" alt="HK Grow Infra" className="h-10 w-10 rounded-sm object-contain" />
-            <span className="font-display text-lg font-medium text-white">Grow Infra</span>
+            <span className="font-display text-lg font-medium text-white">HK Grow Infra</span>
           </div>
           <p className="text-sm leading-relaxed text-navy-200">
             {content.tagline ?? settings?.tagline ?? 'Building Dreams, Delivering Trust'}
